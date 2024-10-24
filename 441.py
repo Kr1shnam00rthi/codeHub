@@ -1,10 +1,12 @@
 class Solution:
-    def findDuplicates(self, nums: List[int]) -> List[int]:
-        res=[]
-        nums.sort()
-        start=nums[0]
-        for i in range(1,len(nums)):
-            if start==nums[i]:
-                res.append(start)
-            start=nums[i]
-        return res
+    def arrangeCoins(self, n: int) -> int:
+        rows=0
+        i=1
+        while n!=0:
+            if n-i >=0:
+                rows+=1
+                n-=i
+                i+=1
+            else:
+                break
+        return rows
